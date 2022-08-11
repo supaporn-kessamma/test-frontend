@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>JavaScript const</h2>
+
+<p id="demo"></p>
+
+<script>
+    const arraySet = ["My age is 0, 0 si ega ym", "nope", "never odd or even", "not a palindrome", "race car"];
+
+    function palindrome(array){
+        let text = "";
+        for(let i = 0; i < array.length; i++){
+            const re = /[\W_]/g;
+            const lowRegStr = array[i].toLowerCase().replace(re, '');
+            const reversed = lowRegStr.split('').reverse().join('');
+            let isPalindrome = reversed === lowRegStr;
+            text += array[i] + " is " + isPalindrome + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+    palindrome(arraySet)
+
+</script>
+</body>
+</html>
